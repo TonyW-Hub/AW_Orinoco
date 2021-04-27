@@ -1,0 +1,23 @@
+{
+  "name": "sitep5",
+  "version": "1.0.0",
+  "description": "SiteP5",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss/style.scss:css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyW-Hub/SiteP5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TonyW-Hub/SiteP5/issues"
+  },
+  "homepage": "https://github.com/TonyW-Hub/SiteP5#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  },
+  "devDependencies": {}
+}

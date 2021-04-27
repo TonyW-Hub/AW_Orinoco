@@ -1,0 +1,53 @@
+.header {
+    img {
+        border-radius: 1rem;
+    }
+    #navbarLink {
+        justify-content: flex-end;
+    }
+    li {
+        margin-right: 10px;
+    }
+}
+
+.carousel-img {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+#card-row-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 2rem;
+    border: none;
+    &-body {
+        padding: 0;
+    }
+    img {
+        border-radius: 2rem;
+    }
+    &-name {
+        font-size: 1.3rem;
+    }
+    &-price {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    .btn {
+        margin-bottom: 10px;
+    }
+}
+
+.footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    i {
+        font-size: 25px;
+    }
+}
