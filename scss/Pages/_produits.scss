@@ -1,0 +1,64 @@
+#teddiesContainer {
+    margin: 20px 0px;
+    #teddies-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100%;
+            border-radius: 2rem;
+        }
+    }
+    #teddiesContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        #name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #price {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    #dropdownMenuButton {
+        border-radius: 2rem;
+    }
+    #colorsItems {
+        border-radius: 2rem;
+        background: lighten($info, 5%);
+        .dropdown-item {
+            color: $white;
+            &:hover {
+                background: darken($info, 5%);
+                border-radius: 2rem;
+            }
+        }
+    }
+    #selectorColor {
+        font-weight: 600;
+    }
+    #numberOfTeddies {
+        width: 3.2rem;
+        padding: 0rem 0.2rem;
+        text-align: center;
+        border-radius: 1rem;
+        border: 2px solid $dark;
+    }
+}
+
+.btnCommander {
+    justify-content: center;
+    .btn {
+        border-radius: 1rem;
+    }
+}

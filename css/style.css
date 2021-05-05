@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.footer i {
+  font-size: 20px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -9934,6 +9938,71 @@ h3 {
     border-color: #dee2e6;
   }
 }
+#teddiesContainer {
+  margin: 20px 0px;
+}
+#teddiesContainer #teddies-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#teddiesContainer #teddies-img img {
+  width: 100%;
+  border-radius: 2rem;
+}
+#teddiesContainer #teddiesContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#teddiesContainer #teddiesContent #name {
+  font-size: 20px;
+  font-weight: bold;
+}
+#teddiesContainer #teddiesContent #price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+.flexCenter #dropdownMenuButton {
+  border-radius: 2rem;
+}
+.flexCenter #colorsItems {
+  border-radius: 2rem;
+  background: #1ab6cf;
+}
+.flexCenter #colorsItems .dropdown-item {
+  color: #fff;
+}
+.flexCenter #colorsItems .dropdown-item:hover {
+  background: #148ea1;
+  border-radius: 2rem;
+}
+.flexCenter #selectorColor {
+  font-weight: 600;
+}
+.flexCenter #numberOfTeddies {
+  width: 3.2rem;
+  padding: 0rem 0.2rem;
+  text-align: center;
+  border-radius: 1rem;
+  border: 2px solid #343a40;
+}
+
+.btnCommander {
+  justify-content: center;
+}
+.btnCommander .btn {
+  border-radius: 1rem;
+}
+
 .header img {
   border-radius: 1rem;
 }
@@ -9964,7 +10033,14 @@ h3 {
   padding: 0;
 }
 .card img {
-  border-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+@media (min-width: 992px) {
+  .card img {
+    object-fit: fill;
+    height: 400px;
+  }
 }
 .card-name {
   font-size: 1.3rem;
@@ -9975,15 +10051,6 @@ h3 {
 }
 .card .btn {
   margin-bottom: 10px;
-}
-
-.footer {
-  height: 100px;
-  display: flex;
-  align-items: center;
-}
-.footer i {
-  font-size: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */
