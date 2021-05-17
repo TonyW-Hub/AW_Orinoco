@@ -1,0 +1,57 @@
+#delete {
+    cursor: pointer;
+}
+
+.card {
+    &-img {
+        border-radius: 15rem;
+        @media (min-width: 992px) {
+            height: 260px;
+            width: 260px;
+            object-fit: cover;
+        }
+    }
+    &-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &-delete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    span {
+        padding: 5px;
+        margin-bottom: 5px;
+        font-size: 17px;
+        border-radius: .5rem;
+    }
+}
+
+.articlePanier {
+    @media (min-width: 992px) {
+        flex-direction: row;
+    }
+    background: darken($secondary, 15%);
+}
+
+#total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    background: $info;
+    padding: 10px;
+    border-radius: 2rem;
+    margin: 20px 0px;
+}
+
+.form-inline {
+    justify-content: space-between;
+    label {
+        margin-bottom: 0.5rem;
+    }
+}
