@@ -1,15 +1,13 @@
 //ajout des données des Produits depuis le local Storage
 document.getElementById("name").innerText = localStorage.getItem("name");
 document.getElementById("description").innerHTML = localStorage.getItem("description");
-document.getElementById("price").innerHTML = localStorage.getItem("price");
-
+document.getElementById("price").innerHTML = localStorage.getItem("price") + " €";
 
 //ajout des images sur la page Produit
 let monImg = document.createElement("img");
 monImg.src = localStorage.getItem("imageUrl");
 let tedImgContainer = document.getElementById("teddies-img");
 tedImgContainer.appendChild(monImg);
-
 
 //ajout des différentes couleurs des ours en peluche
 let colors = localStorage.getItem("colors")
@@ -22,7 +20,6 @@ for(let color of colors) {
     colorsContainer.appendChild(dropDownItem);
 }
 
-
 //montre la couleur selectionné par l'utilisateur
 let colorButtons = document.querySelectorAll('.dropdown-item');
 colorButtons.forEach(button => {
@@ -31,14 +28,6 @@ colorButtons.forEach(button => {
         document.getElementById("selectorColor").innerHTML = value
     })
 });
-
-
-//ajout de manière dynamique de la quantité des oursons en local storage
-document.getElementById("numberOfTeddies").addEventListener('change', () => {
-    let quantity = document.getElementById("numberOfTeddies").value;
-    localStorage.setItem("quantity", quantity);
-});
-
 
 // ajout et update du panier en localStorage
 function updatePanier() {
@@ -51,14 +40,13 @@ function updatePanier() {
         let article = {
             name: localStorage.getItem("name"),
             color: document.getElementById("selectorColor").innerText,
-            quantity: localStorage.getItem("quantity"),
+            quantity: document.getElementById("numberOfTeddies").value,
             price: localStorage.getItem("price"),
             img: localStorage.getItem("imageUrl")
         };
-        
         currentPanier.articles.push(article)
         localStorage.setItem("panier", JSON.stringify(currentPanier))
+        localStorage.removeItem("quantity")
     };
-
     window.location.href = "html/panier.html";
 };

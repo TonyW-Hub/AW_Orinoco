@@ -26,7 +26,7 @@
                                   <a class="nav-link font-weight-bold" href="../index.html">Accueil</a>
                                </li>
                                <li class="nav-item active">
-                                  <a class="nav-link font-weight-bold" href="panier.html">Panier <i class="fas fa-shopping-cart"></i></a>
+                                  <a class="nav-link font-weight-bold" href="panier.html">Panier <i class="fas fa-shopping-cart"></i> (<span id="quantityInPanier"></span>)</a>
                                </li>
                             </ul>
                         </div>
@@ -41,40 +41,41 @@
             
         </div>
         <div class="container">
-            <div id="total">
-                
+            <div class="row justify-content-lg-end justify-content-center">
+                <p id="deleteAll" class="btn">Supprimer tous les articles</p>
             </div>
+            <div id="total"></div>
         </div>
 
         <div class="form container">
-			<form method="post" name="form-panier">
+			<form method="POST" name="form-panier" action="./confirmation.html" class="was-validated">
                 <legend>Coordonnées</legend>
                 <div class="form-group">
                     <div class="form-group">
-                        <label for="formNom">Nom : </label>
-                        <input type="text" id="formNom" class="form-control input-control" required name="formNom">
+                        <label for="Nom">Nom : </label>
+                        <input type="text" id="formNom" class="form-control input-control" required name="Nom">
                     </div>
                     <div class="form-group">
-                        <label for="formPrenom" class="right-inline">Prénom :</label>
-                        <input type="text" id="formPrenom" class="form-control input-control" required name="formPrenom">
+                        <label for="Prenom" class="right-inline">Prénom :</label>
+                        <input type="text" id="formPrenom" class="form-control input-control" required name="Prenom">
                     </div>
                 </div>
                 <div class="form-inline">
-                    <label for="formMail">E-mail :</label>
-                    <input type="email" id="formMail" class="form-control input-control mx-sm-3 mb-2 col-lg-5" required name="formMail">
+                    <label for="Mail">E-mail :</label>
+                    <input type="email" id="formMail" class="form-control input-control mx-sm-3 mb-2 col-lg-5" required name="Mail">
                     <label for="formPhone">Téléphone :</label>
-                    <input type="tel" id="formPhone" class="form-control input-control mx-sm-3 mb-2 col-lg-4" required name="formPhone">
+                    <input type="tel" id="formPhone" class="form-control input-control mx-sm-3 mb-2 col-lg-4" required name="Phone">
                 </div>
                 <div class="form-group">
-                    <label for="formAdresse">Adresse :</label>
-                    <input type="text" id="formAdresse" class="form-control input-control" required name="formAdresse">
+                    <label for="Adresse">Adresse :</label>
+                    <input type="text" id="formAdresse" class="form-control input-control" required name="Adresse">
                 </div>
                 <div class="form-group">
-                    <label for="formVille">Ville :</label>
-                    <input type="text" id="formVille" class="form-control input-control" required name="formVille">
+                    <label for="Ville">Ville :</label>
+                    <input type="text" id="formVille" class="form-control input-control" required name="Ville">
                 </div>
- 
-                <a href="confirmation.html" type="button" class="btn btn-dark btn-lg btn-block my-4" id="envoiPost">Valider ma commande</a>
+
+                <button type="submit" class="btn btn-dark btn-lg btn-block my-4" id="envoiPost">Valider ma commande</button>
 			</form>
 		</div>
     </main>

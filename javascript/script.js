@@ -20,7 +20,7 @@ function displayTeddies(produit) {
                 <p class="card-name font-weight-bold">${produit.name}</p>
                 <p class="card-description">${produit.description}</p>
                 <p class="card-price">${produit.price/100+" €"}</p>
-                <button class="btn btn-info stretched-link" onclick="setArticleInLocalStorage('${produit.name}','${produit.description}','${produit.price/100+" €"}','${produit.imageUrl}','${produit.colors}')">En savoir plus !</button>
+                <button class="btn btn-info stretched-link" onclick="setArticleInLocalStorage('${produit.name}','${produit.description}','${produit.price/100}','${produit.imageUrl}','${produit.colors}')">En savoir plus !</button>
             </div>
         </div>
     </div>
@@ -34,7 +34,6 @@ function displayTeddies(produit) {
         displayTeddies(produit)
     }
 })()
-
 
 //PAGE PRODUITS
 //ajout des elements en local storage
@@ -51,5 +50,3 @@ function setArticleInLocalStorage(name, description, price, imageUrl, colors) {
     window.location.href = "html/produits.html";
 
 }
-
-

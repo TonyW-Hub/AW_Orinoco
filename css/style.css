@@ -10080,9 +10080,30 @@ h3 {
 }
 .card span {
   padding: 5px;
-  margin-bottom: 5px;
   font-size: 17px;
   border-radius: 0.5rem;
+}
+.card-quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+  background: #6c757d;
+  border-radius: 1rem;
+}
+.card-quantity .less-btn {
+  transform: rotate(0);
+  color: #dc3545;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+.card-quantity .add-btn {
+  transform: rotate(0);
+  color: #28a745;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 0px;
 }
 
 .articlePanier {
@@ -10092,6 +10113,17 @@ h3 {
   .articlePanier {
     flex-direction: row;
   }
+}
+
+#deleteAll {
+  margin: 1rem 0rem;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: #dc3545;
+  border: 2px #dc3545 solid;
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 #total {

@@ -24,9 +24,30 @@
     }
     span {
         padding: 5px;
-        margin-bottom: 5px;
         font-size: 17px;
         border-radius: .5rem;
+    }
+    &-quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 7px;
+        background: $secondary;
+        border-radius: 1rem;
+        .less-btn {
+            transform: rotate(0);
+            color: $danger;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 0px;
+        }
+        .add-btn {
+            transform: rotate(0);
+            color: $success;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-bottom: 0px;
+        }
     }
 }
 
@@ -35,6 +56,17 @@
         flex-direction: row;
     }
     background: darken($secondary, 15%);
+}
+
+#deleteAll {
+    margin: 1rem 0rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    color: $danger;
+    border: 2px $danger solid;
+    border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 #total {
