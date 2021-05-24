@@ -38,15 +38,21 @@ function displayTeddies(produit) {
 //PAGE PRODUITS
 //ajout des elements en local storage
 function setArticleInLocalStorage(name, description, price, imageUrl, colors) {
-    localStorage.setItem("name", name)
-    localStorage.setItem("description", description)
-    localStorage.setItem("price", price)
-    localStorage.setItem("imageUrl", imageUrl)
+    const waitArticle = new Promise((resolve) => {
+        if (true) {
+            resolve()
+            localStorage.setItem("name", name)
+            localStorage.setItem("description", description)
+            localStorage.setItem("price", price)
+            localStorage.setItem("imageUrl", imageUrl)
+            
+            let colorsArray = colors.split(",");
+            let jsonColors = JSON.stringify(colorsArray)
+            localStorage.setItem("colors", jsonColors)
+        }
+    });
 
-    let colorsArray = colors.split(",");
-    let jsonColors = JSON.stringify(colorsArray)
-    localStorage.setItem("colors", jsonColors)
-
-    window.location.href = "html/produits.html";
-
+    waitArticle
+        .then(() => window.location.href = "html/produits.html")
+        .catch(error => console.log(error));
 }

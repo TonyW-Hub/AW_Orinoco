@@ -70,6 +70,7 @@ deleteSpans.forEach(span => {
             localStorage.setItem("panier", JSON.stringify(panier));
             document.querySelector("div[data-containerName='" + name + "']").remove();
             updateTotal();
+            updateArticleQuantityInBasket();
         } else {
             console.log("Could not delete")
         }
