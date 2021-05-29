@@ -11,3 +11,23 @@
     font-size: 2rem;
     margin: 1rem;
 }
+
+.info-commande {
+    border-radius: 1.5rem;
+}
+
+.imgProduct {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+#teddiesContainer {
+    border-radius: 2rem;
+    .teddieImg {
+        img {
+            width: 35%;
+            border-radius: 2rem;
+        }
+    }  
+}

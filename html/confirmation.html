@@ -9,18 +9,18 @@
     <title>Orinoco</title>
 </head>
 <body>
-    <header>
+    <header> <!--HEADER-->
         <div class="bg-info header">
             <div class="container">
                <div class="row">
-                   <nav class="col navbar navbar-expand-lg navbar-dark">
+                   <nav class="col navbar navbar-expand-lg navbar-dark"> <!--NAV-->
                         <a class="navbar-brand" href="../index.html">
                             <img src="../img/orinoco.png" alt="logo" class="d-block" height="100">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLink" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div id="navbarLink" class="collapse navbar-collapse">
+                        <div id="navbarLink" class="collapse navbar-collapse"> <!--NAV link-->
                             <ul class="navbar-nav">
                                <li class="nav-item active">
                                   <a class="nav-link font-weight-bold" href="../index.html">Accueil</a>
@@ -36,8 +36,8 @@
         </div>
     </header>
     
-    <main>
-        <div class="container">
+    <main> <!--MAIN-->
+        <div class="container"> <!--Message confirmation de commande-->
             <div class="row">
                 <div class="col">
                     <div class="card bg-success p-3 card-confirmation">
@@ -51,9 +51,37 @@
                 </div>
             </div>
         </div>
+        <div class="container bg-info text-white justify-content-center info-commande"> <!--Récapitulatif des informations utilisateur-->
+            <div class="row justify-content-center py-1">
+                <h3>Récapitulatif de votre commande</h3>
+            </div>
+            <div class="row justify-content-center py-2">
+                <p>Numéro de commande : <span id="orderId" class="font-weight-bold"></span></p>
+            </div>
+            <div class="row justify-content-md-around py-1">
+                <div class="col-md-auto">
+                    <p><span class="font-weight-bold">Nom :</span> <span id="lastName"></span></p>
+                </div>
+                <div class="col-md-auto">
+                    <p><span class="font-weight-bold">Prénom :</span> <span id="firstName"></span></p>
+                </div>
+                <div class="col-md-auto">
+                    <p><i class="fas fa-at"></i> : <span id="email"></span></p>
+                </div>
+            </div>
+            <div class="row justify-content-md-around py-1">
+                <div class="col-md-auto">
+                    <p><i class="fas fa-house-user"></i> : <span id="address"></span></p>
+                </div>
+                <div class="col-md-auto">
+                    <p><i class="fas fa-city"></i> : <span id="city"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="showProductContent"></div> <!--Produit de la commande-->
     </main>
 
-    <footer class="footer mt-4 py-3 bg-info fixed-bottom">
+    <footer class="footer mt-4 py-3 bg-info" id="footer"> <!--FOOTER-->
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -81,6 +109,7 @@
         </div>
     </footer>
 
+    <script src="../javascript/confirmation.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

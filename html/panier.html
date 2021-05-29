@@ -9,18 +9,18 @@
     <title>Orinoco - Panier</title>
 </head>
 <body>
-    <header>
+    <header> <!--HEADER-->
         <div class="bg-info header">
             <div class="container">
                <div class="row">
-                   <nav class="col navbar navbar-expand-lg navbar-dark">
+                   <nav class="col navbar navbar-expand-lg navbar-dark"> <!--NAV-->
                         <a class="navbar-brand" href="../index.html">
                             <img src="../img/orinoco.png" alt="logo" class="d-block" height="100">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLink" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div id="navbarLink" class="collapse navbar-collapse">
+                        <div id="navbarLink" class="collapse navbar-collapse"> <!--NAV link-->
                             <ul class="navbar-nav">
                                <li class="nav-item active">
                                   <a class="nav-link font-weight-bold" href="../index.html">Accueil</a>
@@ -36,51 +36,47 @@
         </div>
     </header>
 
-    <main>
-        <div class="container" id="panierContainer">
-            
-        </div>
-        <div class="container">
+    <main> <!--MAIN-->
+        <div class="container" id="panierContainer"></div> <!--Conteneur des articles mis au panier-->
+        <div class="container"> <!--Bouton pour supprimer tous les articles-->
             <div class="row justify-content-lg-end justify-content-center">
                 <p id="deleteAll" class="btn">Supprimer tous les articles</p>
             </div>
-            <div id="total"></div>
+            <div id="total">Prix Total: </div>
         </div>
 
-        <div class="form container">
-			<form method="HEAD" name="form-panier" action="./confirmation.html" class="was-validated">
+        <div class="form container"> <!--Formulaire utilisateur-->
+			<form method="POST" action ="post" class="was-validated">
                 <legend>Coordonnées</legend>
                 <div class="form-group">
                     <div class="form-group">
                         <label for="Nom">Nom : </label>
-                        <input type="text" id="formNom" class="form-control input-control" required name="Nom">
+                        <input type="text" class="form-control input-control" required name="Nom" id="nomForm">
                     </div>
                     <div class="form-group">
                         <label for="Prenom" class="right-inline">Prénom :</label>
-                        <input type="text" id="formPrenom" class="form-control input-control" required name="Prenom">
+                        <input type="text" class="form-control input-control" required name="Prenom" id="prenomForm">
                     </div>
                 </div>
-                <div class="form-inline">
+                <div class="form-group">
                     <label for="Mail">E-mail :</label>
-                    <input type="email" id="formMail" class="form-control input-control mx-sm-3 mb-2 col-lg-5" required name="Mail">
-                    <label for="formPhone">Téléphone :</label>
-                    <input type="tel" id="formPhone" class="form-control input-control mx-sm-3 mb-2 col-lg-4" required name="Phone">
+                    <input type="email" class="form-control input-control" required name="Mail" id="emailForm" placeholder="nom@example.com">
                 </div>
                 <div class="form-group">
                     <label for="Adresse">Adresse :</label>
-                    <input type="text" id="formAdresse" class="form-control input-control" required name="Adresse">
+                    <input type="text" class="form-control input-control" required name="Adresse" id="adresseForm">
                 </div>
                 <div class="form-group">
                     <label for="Ville">Ville :</label>
-                    <input type="text" id="formVille" class="form-control input-control" required name="Ville">
+                    <input type="text" class="form-control input-control" required name="Ville" id="villeForm">
                 </div>
 
-                <button type="submit" class="btn btn-dark btn-lg btn-block my-4" id="envoiPost">Valider ma commande</button>
+                <button type="submit" class="btn btn-dark btn-lg btn-block my-4" id="btnForm">Valider ma commande</button>
 			</form>
 		</div>
     </main>
 
-    <footer class="footer mt-4 py-3 bg-info">
+    <footer class="footer mt-4 py-3 bg-info" id="footer"> <!--FOOTER-->
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -108,6 +104,7 @@
         </div>
     </footer>
 
+    <!--SCRIPT-->
     <script src="../javascript/panier.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

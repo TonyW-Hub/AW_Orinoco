@@ -10138,13 +10138,6 @@ h3 {
   margin: 20px 0px;
 }
 
-.form-inline {
-  justify-content: space-between;
-}
-.form-inline label {
-  margin-bottom: 0.5rem;
-}
-
 .card-confirmation {
   display: flex;
   justify-content: center;
@@ -10157,6 +10150,24 @@ h3 {
   align-items: center;
   font-size: 2rem;
   margin: 1rem;
+}
+
+.info-commande {
+  border-radius: 1.5rem;
+}
+
+.imgProduct {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+#teddiesContainer {
+  border-radius: 2rem;
+}
+#teddiesContainer .teddieImg img {
+  width: 35%;
+  border-radius: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

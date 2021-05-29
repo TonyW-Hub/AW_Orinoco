@@ -1,16 +1,16 @@
-// PAGE D'ACCUEIL
-// récupération des données sur le serveur
+// Récupération des données sur le serveur via l'API
 function getTeddies() {
     return fetch("http://localhost:3000/api/teddies")
     .then(function(response) {
-        return response.json()
+        let res = response.json();
+        return res
     })
     .catch(function(error){
         alert(error)
     })
 }
 
-// création dynamique du HTML des teddies sur la page d'accueil
+// Création dynamique du HTML des teddies sur la page d'accueil
 function displayTeddies(produit) {
     document.getElementById("card-row-container").innerHTML += `
     <div class="col-lg-6">
@@ -20,7 +20,7 @@ function displayTeddies(produit) {
                 <p class="card-name font-weight-bold">${produit.name}</p>
                 <p class="card-description">${produit.description}</p>
                 <p class="card-price">${produit.price/100+" €"}</p>
-                <button class="btn btn-info stretched-link" onclick="setArticleInLocalStorage('${produit.name}','${produit.description}','${produit.price/100}','${produit.imageUrl}','${produit.colors}')">En savoir plus !</button>
+                <button class="btn btn-info stretched-link" onclick="setArticleInLocalStorage('${produit._id}')">En savoir plus !</button>
             </div>
         </div>
     </div>
@@ -35,21 +35,11 @@ function displayTeddies(produit) {
     }
 })()
 
-//PAGE PRODUITS
-//ajout des elements en local storage
-function setArticleInLocalStorage(name, description, price, imageUrl, colors) {
+// Envoie une promesse des élements en localStorage sur la page Produit via leur ID
+function setArticleInLocalStorage(id) {
     const waitArticle = new Promise((resolve) => {
-        if (true) {
-            resolve()
-            localStorage.setItem("name", name)
-            localStorage.setItem("description", description)
-            localStorage.setItem("price", price)
-            localStorage.setItem("imageUrl", imageUrl)
-            
-            let colorsArray = colors.split(",");
-            let jsonColors = JSON.stringify(colorsArray)
-            localStorage.setItem("colors", jsonColors)
-        }
+        localStorage.setItem("id", id);
+        resolve();
     });
 
     waitArticle

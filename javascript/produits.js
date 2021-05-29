@@ -1,52 +1,63 @@
-//ajout des données des Produits depuis le local Storage
-document.getElementById("name").innerText = localStorage.getItem("name");
-document.getElementById("description").innerHTML = localStorage.getItem("description");
-document.getElementById("price").innerHTML = localStorage.getItem("price") + " €";
+let teddy = null;
 
-//ajout des images sur la page Produit
-let monImg = document.createElement("img");
-monImg.src = localStorage.getItem("imageUrl");
-let tedImgContainer = document.getElementById("teddies-img");
-tedImgContainer.appendChild(monImg);
-
-//ajout des différentes couleurs des ours en peluche
-let colors = localStorage.getItem("colors")
-colors = JSON.parse(colors) 
-const colorsContainer = document.getElementById("colorsItems")
-for(let color of colors) {
-    let dropDownItem = document.createElement("button");
-    dropDownItem.classList.add("dropdown-item")
-    dropDownItem.innerHTML = color;
-    colorsContainer.appendChild(dropDownItem);
-}
-
-//montre la couleur selectionné par l'utilisateur
-let colorButtons = document.querySelectorAll('.dropdown-item');
-colorButtons.forEach(button => {
-    button.addEventListener("click", function(event) {
-        let value = event.target.innerHTML;
-        document.getElementById("selectorColor").innerHTML = value
-    })
-});
-
-// ajout et update du panier en localStorage
-function updatePanier() {
-    let currentPanier = localStorage.getItem("panier");
-    currentPanier = JSON.parse(currentPanier);
-
-    // Crée une variable pour vérifier si le teddy est déjà dans les articles
-    let currentTeddy = currentPanier.articles.find(article => article.name == localStorage.getItem("name"));
-    if (!currentTeddy) {
-        let article = {
-            name: localStorage.getItem("name"),
-            color: document.getElementById("selectorColor").innerText,
-            quantity: document.getElementById("numberOfTeddies").value,
-            price: localStorage.getItem("price"),
-            img: localStorage.getItem("imageUrl")
-        };
-        currentPanier.articles.push(article)
-        localStorage.setItem("panier", JSON.stringify(currentPanier))
-        localStorage.removeItem("quantity")
-    };
-    window.location.href = "html/panier.html";
+// Récupère les produits via leurs ID
+function loadProduct() {
+    return fetch("http://localhost:3000/api/teddies/"+localStorage.getItem("id"))
+        .then(function(response) {
+            let res = response.json();
+            return res;
+        })
+        .catch(function(error) {
+            alert(error)
+            return null;
+        });
 };
+
+// Récupère de manière dynamique l'élément sélectionné par l'utilisateur
+// Et insert les informations correspondant dans les éléments HTML
+(async function() {
+    // récupère la promesse du produit sélectionné
+    teddy = await loadProduct();
+    if(!teddy) return alert("Could not fetch article")
+
+    document.getElementById("name").innerText = teddy.name;
+    document.getElementById("description").innerHTML = teddy.description;
+    document.getElementById("price").innerHTML = teddy.price/100 + " €";
+    const colorsContainer = document.getElementById("colorsItems");
+    for(let color of teddy.colors) {
+        let dropDownItem = document.createElement("button");
+        dropDownItem.classList.add("dropdown-item")
+        dropDownItem.innerHTML = color;
+        colorsContainer.appendChild(dropDownItem);
+    }
+    let monImg = document.getElementById("productImg");
+    monImg.src = teddy.imageUrl;
+    monImg.alt = teddy.name;
+
+    // Permet à l'utilisateur de voir la couleur sélectionné
+    let colorButtons = document.querySelectorAll('.dropdown-item');
+    console.log(colorButtons);
+    colorButtons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            let value = event.target.innerHTML;
+            document.getElementById("selectorColor").innerHTML = value
+        })
+    });
+
+})();
+
+
+// Met à jour le localStorage du Panier, via les élements sélectionner sur la page Produit
+function updatePanier() {
+    if(!teddy) return alert("Could not find teddy");
+    
+    let quantity = document.getElementById("numberOfTeddies").value;
+    let color = document.getElementById("selectorColor").innerHTML;
+    if(!products.includes(teddy._id)) products.push(teddy._id);
+
+    updateProductQuantity(teddy._id, quantity, color)
+
+    updateProducts(products); 
+
+    window.location.href = "panier.html"
+}
