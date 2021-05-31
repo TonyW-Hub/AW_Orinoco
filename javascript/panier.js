@@ -133,7 +133,8 @@ function updateDeleteButton() {
                         let productIndex = productQuantities.findIndex(produit => produit.id == teddyId);
     
                         if(productIndex > -1) productQuantities.splice(productIndex, 1);
-    
+                        
+                        updateArticleQuantityInBasket();
                         localStorage.setItem("products", JSON.stringify(products));
                         localStorage.setItem("productQuantities", JSON.stringify(productQuantities));
     
