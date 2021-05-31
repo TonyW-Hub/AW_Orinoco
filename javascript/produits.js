@@ -24,6 +24,7 @@ function loadProduct() {
     document.getElementById("description").innerHTML = teddy.description;
     document.getElementById("price").innerHTML = teddy.price/100 + " €";
     const colorsContainer = document.getElementById("colorsItems");
+    // crée le contenu des couleurs de manière dynamique
     for(let color of teddy.colors) {
         let dropDownItem = document.createElement("button");
         dropDownItem.classList.add("dropdown-item")
@@ -44,7 +45,6 @@ function loadProduct() {
     });
 
 })();
-
 
 // Met à jour le localStorage du Panier, via les élements sélectionner sur la page Produit
 function updatePanier() {

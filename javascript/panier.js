@@ -248,6 +248,7 @@ if (deleteAllArticle) {
             localStorage.removeItem("productQuantities")
             document.getElementById("quantityInPanier").innerText = 0;
             document.getElementById("panierContainer").innerHTML = "Vous n'avez pas d'articles dans le panier"
+            document.getElementById("total").innerText = "Prix total : 0 €";
         } else {
             console.log("Impossible à supprimer")
         }
