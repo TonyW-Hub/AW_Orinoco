@@ -39,7 +39,7 @@ function updateProductQuantity(productId, quantity, color) {
     localStorage.setItem("productQuantities", JSON.stringify(productQuantities));
 }
 
-// Récupère le produit via son ID
+// Récupère le contenu des produits depuis l'API via leurs ID
 function fetchProduct(productId) {
     return fetch("http://localhost:3000/api/teddies/"+productId)
         .then(function(response) {
@@ -101,11 +101,6 @@ let panierContainer = async (productId) => {
         updateDeleteButton();
         updateLessBtn();
         updateAddBtn();
-}
-
-// fixe le footer en bas de la page si le panier est vide
-if (products.length == 0) {
-    document.getElementById("footer").classList.add("fixed-bottom");
 }
 
 // Parcours le panier en localStorage
@@ -234,7 +229,7 @@ function updateAddBtn() {
     }
 }
 
-// Met à jour le nombre d'artcile qu'il y a dans le panier
+// Met à jour le nombre d'article qu'il y a dans le panier
 function updateArticleQuantityInBasket() {
     let totalProducts = 0;
     for(let product of productQuantities) {
@@ -242,7 +237,7 @@ function updateArticleQuantityInBasket() {
     }
     document.getElementById("quantityInPanier").innerText = totalProducts;
 }
-updateArticleQuantityInBasket()
+updateArticleQuantityInBasket();
 
 //supprimer tout les articles dans le panier
 let deleteAllArticle = document.getElementById("deleteAll");
@@ -261,7 +256,7 @@ if (deleteAllArticle) {
 
 
 /* ----- FORMULAIRE ----- */
-// Envoie le formulaire lors du click sur le bouton commandé
+// Envoi le formulaire lors du click sur le bouton commande
 let btnSendForm = document.getElementById('btnForm');
 if (btnSendForm) {
     btnSendForm.addEventListener("click", (e) => {    
@@ -277,7 +272,7 @@ if (btnSendForm) {
     })
 }
 
-// Envoie POST du formulaire sur l'API
+// Envoi POST du formulaire sur l'API
 // Supprime le localStorage du panier, et créer un localStorage avec les informations de la commande
 const envoiFormulaire = (info, url) => {
     return new Promise((resolve) => {

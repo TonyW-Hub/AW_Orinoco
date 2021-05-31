@@ -36,7 +36,6 @@ function loadProduct() {
 
     // Permet à l'utilisateur de voir la couleur sélectionné
     let colorButtons = document.querySelectorAll('.dropdown-item');
-    console.log(colorButtons);
     colorButtons.forEach(button => {
         button.addEventListener("click", function(event) {
             let value = event.target.innerHTML;
